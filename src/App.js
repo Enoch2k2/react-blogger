@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Form from './components/Form';
+import List from './components/List';
+import Row from './components/Row';
+import Col from './components/Col';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      blogs: []
+    }
+  }
+
+  addBlog = blog => {
+    this.setState({
+      blogs: [...this.state.blogs, blog]
+    })
+  }
+
+  render() {
+    return (
+      <>
+        <Header />
+        <Row>
+          <Col s={12} m={6} l={6}>
+            <Form addBlog={ this.addBlog } />
+          </Col>
+          <Col s={12} m={6} l={6}>
+            <List blogs={ this.state.blogs } />
+          </Col>
+        </Row>
+      </>
+    )
+  }
 }
 
 export default App;

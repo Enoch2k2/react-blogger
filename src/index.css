@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#content {
+  height: 400px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header {
+  padding: 20px;
+}
+
+.main {
+  padding: 30px;
+}
+
+.post-lists {
+  height: 600px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
