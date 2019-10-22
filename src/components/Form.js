@@ -18,10 +18,23 @@ export class Form extends Component {
     [name]: value
    })
   }
-  
-  handleSubmit = e => {
-    e.preventDefault();
 
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('form should component update, nextState', nextState);
+  //   console.log('form should component update current state', this.state);
+  //   return true;
+  // }
+
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('form component will update');
+  // }
+
+  // componentDidUpdate(nextProps, nextState) {
+  //   console.log('form component did update, lets do some animations! woohoo!');
+  // }
+  
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.props.addBlog( this.state )
     
     this.setState({
