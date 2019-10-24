@@ -21,14 +21,9 @@ export class Form extends Component {
   
   handleSubmit = e => {
     e.preventDefault();
-
     this.props.addBlog( this.state )
     
-    this.setState({
-      title: '',
-      author: '',
-      content: ''
-    })
+    this.props.history.push("/blogs") // redirect to /blogs
   }
   
   render() {
